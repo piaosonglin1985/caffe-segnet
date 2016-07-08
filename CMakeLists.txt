@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 2.8.7)
 
 # ---[ Caffe project
 project(Caffe C CXX)
+include(/home/piao/projects/PerceptionFramework/common-settings.cmake)
+include_directories(/home/piao/localLibraries/include)
 
 # ---[ Using cmake scripts and modules
 list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/Modules)
