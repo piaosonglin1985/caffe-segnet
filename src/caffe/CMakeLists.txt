@@ -17,9 +17,16 @@ if(HAVE_CUDA)
   list(APPEND srcs ${cuda_objs} ${cuda})
 endif()
 
+find_package(MPI REQUIRED)
+set(Caffe_LINKER_LIBS ${Caffe_LINKER_LIBS} ${MPI_LIBRARIES})
+
 add_library(caffe ${srcs})
 target_link_libraries(caffe proto ${Caffe_LINKER_LIBS})
 caffe_default_properties(caffe)
+set_target_properties(caffe PROPERTIES
+    VERSION   ${CAFFE_TARGET_VERSION}
+    SOVERSION ${CAFFE_TARGET_SOVERSION}
+    )
 
 # ---[ Tests
  add_subdirectory(test)
