@@ -8,8 +8,10 @@ endif()
 
 # ---[ Caffe project
 project(Caffe C CXX)
+
 include(/home/piao/projects/PerceptionFramework/common-settings.cmake)
 include_directories(/home/piao/localLibraries/include)
+
 # ---[ Caffe version
 set(CAFFE_TARGET_VERSION "1.0.0-rc3" CACHE STRING "Caffe logical version")
 set(CAFFE_TARGET_SOVERSION "1.0.0-rc3" CACHE STRING "Caffe soname version")
